@@ -1,22 +1,19 @@
 <?php
 
-    /*Creamos una funcion llamada conectar*/
-    function conectar(){
-    /*Informacion del servidor*/
-    $hots="localhost";
-    $user="root";
-    $pass="";
+function conectar() {
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $db   = "aw221";
 
-    /*Base de datos*/
-    $db="aw221";
+    $con = mysqli_connect($host, $user, $pass, $db);
 
-    /*Permite conectarnos a MySQL*/
-    $con=mysqli_connect($hots,$user,$pass);
+    if (!$con) {
+        die("Error de conexión: " . mysqli_connect_error());
+    }
 
-    /*Le vamos a decir que BD y la informacion de con*/
-    mysqli_select_db($con,$db);
+    mysqli_set_charset($con, "utf8mb4");
 
     return $con;
-
 }
 ?>
