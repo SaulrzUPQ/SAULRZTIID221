@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD PELICULAS</title>
+</head>
+<body>
+    <div>
+        <h1>CRUD PELICULAS</h1>
+        {%with mensaje=messages.get('mensaje')%}
+            {%if mensaje%}
+                <p>{{mensaje}}</p>
+            {%endif%}
+        {%endwith%}
+
+
+        <form action="/guardar" method="POST">
+            <input type="text" name="titulo" id="titulo" placeholder="Titulo de la pelicula">
+            <input type="text" name="director" id="director" placeholder="Director de la pelicula">
+            <input type="text" name="anio" id="anio" placeholder="Año de la pelicula">
+            <button type="submit">Guardar</button>
+        </form>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Director</th>
+                <th>Año</th>
+                </try>
+            </thead>
+        </table>
+
+    </div>
+    
+</body>
+</html>
