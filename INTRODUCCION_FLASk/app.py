@@ -14,7 +14,7 @@ app.secret_key = 'mysecretkey'
 
 mysql = MySQL(app)
 
-
+ 
 @app.route("/")
 def home():
     return render_template("login.html")
